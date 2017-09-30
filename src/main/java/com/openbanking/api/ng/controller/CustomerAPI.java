@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/customer")
 @Api(value = "/customer", description = "Customer related operations", consumes = "application/json", tags = {"customer"})
-public class CustomerController implements Serializable {
+public class CustomerAPI implements Serializable {
 
     @ApiOperation(value = "Finds a Customer by Customer ID",
             notes = "The Customer ID is the unique identifier for a customer as defined by a Bank",
@@ -24,7 +24,7 @@ public class CustomerController implements Serializable {
     @ApiResponses(value = {@ApiResponse(code = 400, message = "Invalid Customer ID supplied"),
             @ApiResponse(code = 404, message = "Customer not found")})
     @RequestMapping(value = "/getByCustomerId", method = RequestMethod.GET)
-    public Customer getByCustomerId(@ApiParam(value = "The Customer's unique identifier") String customerId) {
+    public Customer getByCustomerId(@ApiParam(value = "The Customer's unique identifier",name = "customerId") String customerId) {
         return new Customer();
     }
 

@@ -1,4 +1,5 @@
 package com.openbanking.api.ng.controller;
+
 import com.openbanking.api.ng.payload.pos.POS;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +30,4 @@ public class POSController {
     public List<POS> getPosNearLocation(@ApiParam(value = "Latitude and Longitude of POS ") int latitude, int longitude) {
         return Collections.singletonList(new POS());
     }
-
-
 }
